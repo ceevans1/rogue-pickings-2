@@ -13,6 +13,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: column wrap;
 }
 
 .container{
@@ -21,6 +22,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: column wrap;
 }
 
 h1,
@@ -52,26 +54,28 @@ p {
 
 /*The widths are in a percentage!*/
 header {
-	height: 110px;
 	border-bottom: 3px solid #77a466;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: column wrap;
 }
 
 header h1 {
-	float: left;
+
 	margin: 0;
-	padding: 38px 0;
+
 }
 header h1 span {
 	color: #77a466;
 }
 
 header nav {
-	float: right;
-	padding: 46px 0;
+
+	padding: 0;
+	display: flex;
+	flex-flow: column wrap;
 }
 header nav ul {
 	margin: 0;
@@ -82,7 +86,7 @@ header nav ul li {
 	font-weight: 700;
 	font-size: 0.875em;
 	padding: 0 10px;
-	display: inline;
+	list-style:none;
 }
 header nav ul li a{
 	text-decoration: none;
@@ -97,11 +101,13 @@ header nav ul li a{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 
 .main-image {
 	height: auto;
 	float: left;
+
 }
 .main-image img {
 	width: 100%;
@@ -176,10 +182,62 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 footer span {
 	font-family: 'Wisdom Script', cursive;
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 14px;
+}
+
+@media all and (min-width: 768px){
+	header{
+		height: 110px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: column nowrap;
+	}
+
+	
+
+	header nav ul {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.bottom-section{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: row wrap;
+	}
+	.section-one,
+	.section-two,
+	.section-three{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: row wrap;
+	}
+}
+
+
+@media all and (min-width: 1200px){
+	header nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+	.section-one{
+		dislplay: flex;
+		flex-flow: column wrap;
+	}
+
+	.section-three{
+		display: flex;
+		flex-flow: column wrap;
+	}
+
 }
